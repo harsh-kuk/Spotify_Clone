@@ -1,0 +1,43 @@
+.App {
+  display: flex;
+}
+
+.Sidebar {
+  width: 200px;
+  background: #111;
+  color: white;
+  padding: 20px;
+}
+
+.Sidebar h2 {
+  font-size: 1.5em;
+}
+
+.Sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Sidebar nav ul li {
+  margin: 10px 0;
+}
+
+.Sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+.Player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
