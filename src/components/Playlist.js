@@ -1,21 +1,18 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { mockPlaylists } from '../mockData';
 
-const Playlist = () => {
-  const { id } = useParams();
-  const playlist = mockPlaylists.find((p) => p.id.toString() === id);
+const Playlists = () => {
+  const playlists = ["Playlist 1", "Playlist 2", "Playlist 3"];
 
   return (
-    <div className="Playlist">
-      <h1>{playlist.name}</h1>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Playlists</h1>
       <ul>
-        {playlist.songs.map((song, index) => (
-          <li key={index}>{song}</li>
+        {playlists.map((playlist, index) => (
+          <li key={index} className="mb-2">{playlist}</li>
         ))}
       </ul>
     </div>
   );
 };
 
-export default Playlist;
+export default Playlists;

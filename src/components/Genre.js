@@ -1,14 +1,18 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 
-const Genre = () => {
-  const { name } = useParams();
+const Genres = () => {
+  const genres = ["Rock", "Pop", "Hip-hop", "Jazz"];
+
   return (
-    <div className="Genre">
-      <h1>{name} Music</h1>
-      {/* Implement genre-specific content here */}
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Genres</h1>
+      <ul>
+        {genres.map((genre, index) => (
+          <li key={index} className="mb-2">{genre}</li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default Genre;
+export default Genres;

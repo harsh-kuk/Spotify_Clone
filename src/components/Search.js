@@ -1,32 +1,23 @@
 import React, { useState } from 'react';
-import { mockPlaylists, mockAlbums } from '../mockData';
 
 const Search = () => {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
 
   const handleSearch = () => {
-    const allItems = [...mockPlaylists, ...mockAlbums];
-    const filteredResults = allItems.filter(item =>
-      item.name.toLowerCase().includes(query.toLowerCase())
-    );
-    setResults(filteredResults);
+    console.log(`Searching for ${query}`);
   };
 
   return (
-    <div className="Search">
-      <h1>Search</h1>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Search</h1>
       <input
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search for music..."
+        className="p-2 border rounded mb-2"
       />
-      <button onClick={handleSearch}>Search</button>
-      <ul>
-        {results.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      <button onClick={handleSearch} className="p-2 bg-blue-500 text-white rounded">Search</button>
     </div>
   );
 };

@@ -1,21 +1,18 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { mockAlbums } from '../mockData';
 
-const Album = () => {
-  const { id } = useParams();
-  const album = mockAlbums.find((a) => a.id.toString() === id);
+const Albums = () => {
+  const albums = ["Album 1", "Album 2", "Album 3"];
 
   return (
-    <div className="Album">
-      <h1>{album.name}</h1>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Albums</h1>
       <ul>
-        {album.songs.map((song, index) => (
-          <li key={index}>{song}</li>
+        {albums.map((album, index) => (
+          <li key={index} className="mb-2">{album}</li>
         ))}
       </ul>
     </div>
   );
 };
 
-export default Album;
+export default Albums;
